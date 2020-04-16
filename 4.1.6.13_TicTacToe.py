@@ -1,3 +1,4 @@
+import sys
 
 theBoard = {'7': '7' , '8': '8' , '9': '9' ,
             '4': '4' , '5': '5' , '6': '6' ,
@@ -49,7 +50,7 @@ def ListFreeFields():
             open_values.append(key)
 #    random = open_values[0]
 
-#def DrawMove():
+#def xMove(): #logic for 1 player mode, need to develop better AI
  #   xturn = 'x'
   #  for i in open_values:
    #     if i in open_values:
@@ -117,7 +118,7 @@ def restart():
         resetCount
     elif restart == "n":
 
-        exit()
+        sys.exit(0)
     
 
 
