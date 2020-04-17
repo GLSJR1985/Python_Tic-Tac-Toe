@@ -31,9 +31,10 @@ def EnterMove():
             ListFreeFields()
             count += 1
             print("\nOpen spaces: ", open_values)
+            print(board_keys)
             VictoryFor()
-        else:
-            print("That space is already take.\nMove to a new place.")
+        elif move not in open_values:
+            print("That space is already taken.\nMove to a new place.")
             
         if turn == 'o':
             turn = 'x'
