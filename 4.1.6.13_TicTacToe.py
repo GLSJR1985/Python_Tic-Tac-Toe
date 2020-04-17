@@ -9,18 +9,22 @@ for key in theBoard:
 
     
 def DisplayBoard(board):
-    print(board['7'] + '|' + board['8'] + '|' + board['9'])
-    print('-+-+-')
-    print(board['4'] + '|' + board['5'] + '|' + board['6'])
-    print('-+-+-')
-    print(board['1'] + '|' + board['2'] + '|' + board['3'])   
+    print('     |     |')
+    print('  ' + board['7'] + '  |  ' + board['8'] + '  |  ' + board['9'])
+    print(' -----+---+-----')
+    print('     |     |')
+    print('  ' + board['4'] + '  |  ' + board['5'] + '  |  ' + board['6'])
+    print('     |     |')
+    print(' -----+---+-----')
+    print('  ' + board['1'] + '  |  ' + board['2'] + '  |  ' + board['3'])
+    print('     |     |')
     
 
 def EnterMove():
     global count
     count = 0
     global turn    
-    turn = 'o'
+    turn = 'O'
     for i in range(10):
         print("\n")
         DisplayBoard(theBoard)
@@ -31,15 +35,16 @@ def EnterMove():
             ListFreeFields()
             count += 1
             print("\nOpen spaces: ", open_values)
-            print(board_keys)
             VictoryFor()
-        elif move not in open_values:
-            print("That space is already taken.\nMove to a new place.")
-            
-        if turn == 'o':
-            turn = 'x'
         else:
-            turn ='o'
+            move not in open_values
+            print("That space is already taken.\nMove to a new place.")
+
+            
+        if turn == 'O':
+            turn = 'X'
+        else:
+            turn ='O'
 
   
 def ListFreeFields():
@@ -111,7 +116,7 @@ def VictoryFor():
 
 
 def restart():
-    restart = input("Do you want to play again? y or n?")
+    restart = input("Do you want to play again? y or n?\n")
     if restart == "y":
         for key in board_keys:
             theBoard[key] = key
